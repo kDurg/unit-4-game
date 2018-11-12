@@ -1,0 +1,20 @@
+body {
+    background: papayawhip;
+    font-size: 16px;
+}
+
+.instructions {
+    width: 500px;
+    background: rgb(94, 94, 182);
+}
+
+.crystal {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    background: red;
+    position: relative;
+    float: left;
+    margin-bottom: 0;
+}
+
