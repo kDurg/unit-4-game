@@ -14,7 +14,6 @@ console.log('welcome to the console')
 
         // -------------------------------------------------------------
         
-        $(document).ready(randomizeTarget ())
         
         function randomizeTarget() {
             targetScore = Math.floor(Math.random() * 101 +19);
@@ -22,31 +21,29 @@ console.log('welcome to the console')
             $(".scoreBoard span").text(targetScore);
         }
 
-
         function makeDivs() {
             for (var i=0; i<array.length; i++) {
                 var div = $("<div>");
                 div.addClass('crystal');
-                div.attr('crystalVal', Math.floor(Math.random() * 11 +1));
+                div.attr('crystalVal', Math.floor(Math.random() * 12 +1));
                 div.attr('id', i);
                 div.html("<img src = '" + imgArray[i] + "' />");
                 $('.divContainer').append(div);
-                console.log(this);
             }
         }
 
         function reset() {
             currentScore = 0;
             targetScore = 0;
-            randomizeTarget ();               
-            console.log(this);
-            // this.crystal.attr('crystalVal', Math.floor(Math.random() * 11 +1));
-
+            $(".divContainer").empty ();
+            randomizeTarget ();   
+            makeDivs (); //crystal value is resetting, though not clickable.
         }
 
 
         // main process
         // -------------------------------------------------------------
+        $(document).ready(randomizeTarget ())
         makeDivs();
 
         $(".crystal").on('click', function() {
@@ -55,49 +52,18 @@ console.log('welcome to the console')
             currentScore = (currentScore + currentValue);
             console.log("--------------------------------------------")
             console.log ("Gem Value: " + currentValue + " | Type:" + typeof(currentValue));
-            console.log("Current Score:" + currentScore + " | Type:" + typeof(currentScore));
 
             if (currentScore === targetScore) {
                 wins++
                 alert ("You Won " + wins + " Times");
-                reset ();
-
-                // need to reset all values 
-                
+                reset ();      
             } else if (currentScore > targetScore) {
                 losses++
                 alert ("You Lost " + losses + " Times");
                 reset ();
-
-                // need to reset all values 
-
             }
 
         $("#currentScore span").text(currentScore);
         $("#WINS").html(wins);
         $("#LOSSES").text(losses);
         });
-
-
-
-
-
-        // global variables
-        // wins, loses, goalNumber, userscore
-        
-        // function 1
-        //  var images = ['assets/crystl1', 'assets/crystal2]
-        // set goalNumber with math.random
-        // loop through images array
-        // for every index, create image on screen
-        // add class
-        // add src
-        // add crystal value as attribute
-        // append image to screen
-
-        
-        // create click event on crystals
-        // use $(this) to capture value attribute
-        // add clicked value to userScore
-        // create conditions to check for win or loss using if statements
-            // if win or loss, restart game and increment wins or losses -->
