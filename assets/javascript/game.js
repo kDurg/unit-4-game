@@ -31,6 +31,7 @@ console.log('welcome to the console')
                 div.attr('id', i);
                 div.html("<img src = '" + imgArray[i] + "' />");
                 $('.divContainer').append(div);
+                console.log(this);
             }
         }
 
@@ -38,8 +39,8 @@ console.log('welcome to the console')
             currentScore = 0;
             targetScore = 0;
             randomizeTarget ();               
-            var div = $("<div>");
-            crystal.attr('crystalVal', Math.floor(Math.random() * 11 +1));
+            console.log(this);
+            // this.crystal.attr('crystalVal', Math.floor(Math.random() * 11 +1));
 
         }
 

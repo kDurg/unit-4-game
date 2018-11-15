@@ -1,20 +1,21 @@
-.clearfix::after {
+/* .clearfix::after {
     content: "";
     clear: both;
     display: table;
-}
+} */
 
 
 body {
     background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: 100%;
     font-size: 16px;
     width: 500px;
+    margin: auto;
 }
 
 h1 {
-    padding: 20px;
+    padding: 20px 0 20px 0;
     background: orange;
     width: 500px;
 }
@@ -22,6 +23,7 @@ h1 {
     width: 500px;
     background: beige;
     color: green;
+    margin-left: 15px;
 }
 
 .scoreBoard {
@@ -30,6 +32,7 @@ h1 {
     height: 100px;  
     float: left;
     font-size: 16px;
+    margin-top: 10px;
 }
 
 .winsLosses {
@@ -37,6 +40,9 @@ h1 {
     height: 100px;
     float: left;
     background: mintcream;
+    margin-left: 10px;
+    margin-top: 10px;
+
 }
 
 #currentScore {
@@ -49,6 +55,7 @@ h1 {
 .divContainer {
     float: left;
     clear: none;
+    margin-bottom: 50px;
 }
 
 .crystal {
@@ -58,8 +65,7 @@ h1 {
     /* background: red; */
     position: relative;
     float: left;
-    margin-bottom: 0;
-    
+    margin-bottom: 0;   
 }
 
 img {
@@ -68,3 +74,5 @@ img {
     margin-top: 20px;
 }
 
+@media only screen and (max-width: 550px) {
+}
