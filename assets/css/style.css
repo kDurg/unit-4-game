@@ -1,20 +1,70 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
 body {
-    background: papayawhip;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 16px;
+    width: 500px;
+}
+
+h1 {
+    padding: 20px;
+    background: orange;
+    width: 500px;
+}
+.instructions {
+    width: 500px;
+    background: beige;
+    color: green;
+}
+
+.scoreBoard {
+    width: 250px;
+    background: mintcream;
+    height: 100px;  
+    float: left;
     font-size: 16px;
 }
 
-.instructions {
-    width: 500px;
-    background: rgb(94, 94, 182);
+.winsLosses {
+    width: 200px;
+    height: 100px;
+    float: left;
+    background: mintcream;
+}
+
+#currentScore {
+    height: 100px;
+    width: 200px;
+    float: left;
+    background: mintcream;
+}
+
+.divContainer {
+    float: left;
+    clear: none;
 }
 
 .crystal {
     height: 100px;
     width: 100px;
     margin-right: 10px;
-    background: red;
+    /* background: red; */
     position: relative;
     float: left;
     margin-bottom: 0;
+    
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
 }
 

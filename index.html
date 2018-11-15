@@ -11,7 +11,7 @@
 
 
 <body>
-    <h1>Cystal Collector!</h1>
+    <h1>Crystal Collector!</h1>
     <div class = "instructions">
             <p>You will be given a random number at the start of the game.</p>
             <p>There are four crystals below. By clicking the crystals, you will add a specific amount of points to your total score.</p>
@@ -25,15 +25,16 @@
     </div>
 
     <div class = "winsLosses">
-        <p>Wins: <span></span></p>
-        <p>Losses: <span></span></p>
+            <h3>Your Wins: <span id = "WINS">0</span></h3>
+            <h3>Your Losses: <span id = "LOSSES">0</span></h3>
+
     </div>
 
     <div class = "divContainer">
         <div id ="pictures"></div>
     </div>
 
-    <div id ="currentScore">Your total score is: 
+    <div id ="currentScore"><h3>Your Current Score is: <span>0</span></h3>
     </div>
     
 
@@ -41,92 +42,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script>
-        console.log('welcome to the console')
+    <script src="assets/javascript/game.js"></script>
 
-        
-        // global variables
-        // -------------------------------------------------------------
-        var x = 0;
-        var y = {};
-        var currentScore = 0;
-        var targetScore = 0;
-        var wins = 0;
-        var losses = 0;
     
-        var imgArray = new Array();
-            imgArray [0] = new Image();
-            imgArray [0].src = "assets/images/blueGem.png"
-
-        // -------------------------------------------------------------
-        
-        function makeDivs() {
-            var array = [1, 2, 3, 4];
-            for (var i=0; i<array.length; i++) {
-                var div = $("<div>");
-                div.addClass('crystal');
-                div.attr('crystalVal', Math.floor(Math.random() * 11));
-                div.attr('id', i);
-                // div.attr("src", imgArray[i]);
-                $('.divContainer').append(div);
-            }
-        }
-
-        $(document).ready (function () {
-            targetScore = Math.floor(Math.random() * 101 +19);
-            console.log ("Target Score is:  " + targetScore);
-            $(".scoreBoard").text("Get to this score: " + targetScore);
-        })
-
-
-        // main process
-        // -------------------------------------------------------------
-        makeDivs();
-
-        $(".crystal").on('click', function() {
-            
-            var currentValue = Number($(this).attr("crystalVal")); 
-            currentScore = (currentScore + currentValue);
-            console.log("--------------------------------------------")
-            console.log ("Gem Value: " + currentValue + " | Type:" + typeof(currentValue));
-            console.log("Current Score:" + currentScore + " | Type:" + typeof(currentScore));
-
-            if (currentScore === targetScore) {
-                wins++
-                alert ("You Won " + wins + " Times");
-                // need to reset all values 
-                
-            } else if (currentScore > targetScore) {
-                losses++
-                alert ("You Lost " + losses + " Times");
-                // need to reset all values 
-
-            }
-        });
-
-
-    </script>
     
 </body>
 </html>
 
 
-<!-- // global variables
-        // wins, loses, goalNumber, userscore
-        
-        // function 1
-        //  var images = ['assets/crystl1', 'assets/crystal2]
-        // set goalNumber with math.random
-        // loop through images array
-        // for every index, create image on screen
-        // add class
-        // add src
-        // add crystal value as attribute
-        // append image to screen
-
-        
-        // create click event on crystals
-        // use $(this) to capture value attribute
-        // add clicked value to userScore
-        // create conditions to check for win or loss using if statements
-            // if win or loss, restart game and increment wins or losses -->
